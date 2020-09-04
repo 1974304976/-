@@ -1,0 +1,10 @@
+import pandas as pd
+import numpy as npimport pandas as pd
+import numpy as npimport pandas as pd
+import numpy as np
+
+data = pd.read_excel('stock-datas.xls')
+data.replace('', np.NaN, inplace = True) #将空属性替换为NaN
+data = data.drop_duplicates() #数据去重
+data.dropna(inplace=True)
+data.to_excel('stocks-datas-new.xls', index = None)
